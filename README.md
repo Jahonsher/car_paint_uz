@@ -74,6 +74,6 @@ server orqali yuborish yoki to‘lov xizmati ulanmagan.
 
 ## GitHub
 
-Loyiha repozitoriysi: https://github.com/Saydakbarov/car_paint_uz.
+Loyiha repozitoriysi: https://github.com/Jahonsher/car_paint_uz.
 `node_modules`, build va test natijalari, lokal sozlamalar hamda maxfiy fayllar
 `.gitignore` orqali repozitoriydan chiqarilgan. `.env.example` saqlanadi.
