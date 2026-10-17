@@ -1,10 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Suspense, lazy, useState } from "react";
-// import HomePage from "./pages/HomePage";
-// import AboutPage from "./pages/AboutPage";
-// import ProductPage from "./pages/ProductPage";
-// import NewsPage from "./pages/NewsPage";
-// import ContactPage from "./pages/ContactPage";
 import Loading from "./components/Loading/Loading";
 import { readLanguage } from "./utils/storage";
 
