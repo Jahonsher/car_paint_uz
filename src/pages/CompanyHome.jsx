@@ -17,13 +17,13 @@ export default function CompanyHome({ lang, setLang }) {
         <div className="auto-hero-actions"><Link className="auto-button" to="/product">{text.catalog}<span>↗</span></Link><a className="auto-text-link" href={company.phoneHref}>{text.contact} ↗</a></div>
         <a className="auto-scroll-cue" href="#process"><span>↓</span>{text.scroll}</a>
       </div>
-      <figure className="auto-hero-art company-hero-art"><AutomotiveImage name="hero" alt={text.heroAlt} hero sizes="(max-width: 760px) 100vw, 58vw" /><figcaption><span>CARPAINT / PRODUCT COLLECTION</span><span>{text.photo} ↗</span></figcaption></figure>
+      <figure className="auto-hero-art company-hero-art"><AutomotiveImage name="hero" alt={text.heroAlt} hero sizes="(max-width: 760px) 100vw, 58vw" /><div className="company-color-swatch" aria-hidden="true"><i /><i /><i /><i /><i /><span>COLOR / 500+</span></div><figcaption><span>CARPAINT / PRODUCT COLLECTION</span><span>{text.photo} ↗</span></figcaption></figure>
       <div className="auto-hero-index" aria-hidden="true">01 / COLOR & MATERIAL</div>
     </section>
-    <section className="auto-material-band" aria-label={text.brandTitle}><div className="auto-container">{company.brands.map(brand => <span key={brand}>{brand}</span>)}</div></section>
+    <section className="auto-material-band" aria-label={text.brandTitle}><p className="auto-container auto-eyebrow">{text.brandTitle}</p><div className="auto-container">{company.brands.map(brand => <span key={brand}>{brand}</span>)}</div></section>
     <AutomotiveStory text={text} />
     <CompanyGallery text={text} />
-    <section className="auto-about auto-container" aria-labelledby="auto-about-title">
+    <section className="auto-about auto-container" aria-labelledby="auto-about-title" data-reveal>
       <figure className="company-about-art"><AutomotiveImage name="primer" alt="Daybond 445 2K Acrylic Primer" sizes="(max-width: 760px) 100vw, 48vw" /><figcaption>CARPAINT / PRODUCT COLLECTION</figcaption></figure>
       <div><p className="auto-eyebrow">{text.aboutLabel}</p><h2 id="auto-about-title">{text.aboutTitle}</h2><p>{text.aboutText}</p><Link className="auto-text-link" to="/about">{text.aboutLink} ↗</Link></div>
     </section>

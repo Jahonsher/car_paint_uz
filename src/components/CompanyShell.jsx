@@ -3,6 +3,11 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import copy from '../localization/company';
 import { company } from '../data/company';
 import logo from '../assets/brand/logo-light.png';
+import usePageMotion from '../utils/usePageMotion';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import '@fontsource/roboto/900.css';
 import '../pages/AutomotiveHome.css';
 import '../pages/CompanyPages.css';
 
@@ -14,6 +19,7 @@ export default function CompanyShell({ lang, setLang, pageKey = 'home', children
   const location = useLocation();
   const [menu, setMenu] = useState(false);
   const menuButton = useRef(null);
+  const shell = usePageMotion(location.pathname, language);
   useEffect(() => {
     const oldTitle = document.title;
     const oldLanguage = document.documentElement.lang;
@@ -39,7 +45,7 @@ export default function CompanyShell({ lang, setLang, pageKey = 'home', children
     window.addEventListener('keydown', close);
     return () => window.removeEventListener('keydown', close);
   }, [menu]);
-  return <div className="auto-home">
+  return <div className="auto-home" ref={shell}>
     <a className="auto-skip" href="#auto-main">{text.skip}</a>
     <div className="auto-topline auto-container"><span>{text.note}</span><a href={company.phoneHref}>{company.phone} ↗</a></div>
     <header className="auto-header auto-container">
