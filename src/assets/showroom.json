@@ -1,0 +1,51 @@
+{
+  "hero": {
+    "width": 2015,
+    "height": 2560,
+    "source": "/images/photo_5328239889897692512_w.jpg",
+    "src": "/images/optimized/hero-960.webp",
+    "srcSet": "/images/optimized/hero-480.webp 480w, /images/optimized/hero-960.webp 960w, /images/optimized/hero-1440.webp 1440w"
+  },
+  "putty": {
+    "width": 1280,
+    "height": 695,
+    "source": "/images/photo_5328239889897692505_y.jpg",
+    "src": "/images/optimized/putty-960.webp",
+    "srcSet": "/images/optimized/putty-480.webp 480w, /images/optimized/putty-960.webp 960w, /images/optimized/putty-1280.webp 1280w"
+  },
+  "primer": {
+    "width": 2560,
+    "height": 1920,
+    "source": "/images/photo_5328239889897692496_w.jpg",
+    "src": "/images/optimized/primer-960.webp",
+    "srcSet": "/images/optimized/primer-480.webp 480w, /images/optimized/primer-960.webp 960w, /images/optimized/primer-1440.webp 1440w"
+  },
+  "topcoat": {
+    "width": 2139,
+    "height": 2560,
+    "source": "/images/photo_5328239889897692504_w.jpg",
+    "src": "/images/optimized/topcoat-960.webp",
+    "srcSet": "/images/optimized/topcoat-480.webp 480w, /images/optimized/topcoat-960.webp 960w, /images/optimized/topcoat-1440.webp 1440w"
+  },
+  "paint": {
+    "width": 1828,
+    "height": 2560,
+    "source": "/images/photo_5328239889897692510_w.jpg",
+    "src": "/images/optimized/paint-960.webp",
+    "srcSet": "/images/optimized/paint-480.webp 480w, /images/optimized/paint-960.webp 960w, /images/optimized/paint-1440.webp 1440w"
+  },
+  "hardener": {
+    "width": 1920,
+    "height": 2560,
+    "source": "/images/photo_5328239889897692482_w.jpg",
+    "src": "/images/optimized/hardener-960.webp",
+    "srcSet": "/images/optimized/hardener-480.webp 480w, /images/optimized/hardener-960.webp 960w, /images/optimized/hardener-1440.webp 1440w"
+  },
+  "plastic": {
+    "width": 1204,
+    "height": 2560,
+    "source": "/images/photo_5328239889897692486_w.jpg",
+    "src": "/images/optimized/plastic-960.webp",
+    "srcSet": "/images/optimized/plastic-480.webp 480w, /images/optimized/plastic-960.webp 960w, /images/optimized/plastic-1204.webp 1204w"
+  }
+}

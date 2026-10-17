@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import {
   Box,
+  Button,
   Drawer,
   IconButton,
   List,
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  Typography,
 } from "@mui/material";
 import { Menu } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
+import { MenuData } from "../../data";
 import content from "../../localization/content";
 import LanguageComp from "./LanguageComp";
 
@@ -22,7 +25,7 @@ export default function DrawerComp({ lang, setLang }) {
   const [openDrawer, setOpenDrawer] = useState(false);
   return (
     <React.Fragment>
-      <Box sx={{ background: "black !important" }}>
+      <Box sx={{ background: "black" }}>
         <Drawer
           open={openDrawer}
           onClose={() => setOpenDrawer(false)}
@@ -51,20 +54,9 @@ export default function DrawerComp({ lang, setLang }) {
 
             <LanguageComp lang={lang} setLang={setLang} />
           </Box>
-          <List
-            sx={{
-              width: "100%",
-              display: "flex",
-              flexDirection: "column",
-              background: "black",
-            }}
-          >
-            {content[lang].headerMenuData?.links?.map((page, i) => (
-              <ListItemButton
-                sx={{ display: "inline-block" }}
-                key={i}
-                onClick={() => setOpenDrawer(false)}
-              >
+          <List sx={{ width: "240px", p: 2 }}>
+            {content[lang]?.headerMenuData?.links?.map((page, i) => (
+              <ListItemButton key={i} onClick={() => setOpenDrawer(false)}>
                 <ListItemIcon onClick={() => navigate(page.path)}>
                   <ListItemText sx={{ color: "white !important" }}>
                     {page.title}

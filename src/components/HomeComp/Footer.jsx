@@ -1,11 +1,11 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 
 import Logo from "../../logoBlack.png";
 import content from "../../localization/content";
 
-export default function Footer({ lang }) {
+export default function Footer({lang}) {
   const navigate = useNavigate();
   return (
     <Box
@@ -30,15 +30,14 @@ export default function Footer({ lang }) {
             />
             <Box sx={{ mt: 4 }}>
               <Typography sx={{ color: "gray" }}>
-                Янгихаётский район, Ташкен
+                Sunset Road No 11 Denpasar, Bali​ - Indonesia
               </Typography>
               <Typography sx={{ color: "gray" }}>info@carpaint.uz</Typography>
               <a
                 href="tel:+998909557555"
                 style={{ color: "gray", textDecoration: "none" }}
               >
-                {lang === "ru" ? "Номер " : lang === "en" ? "Phone" : "Telefon"}
-                : 909557555
+                Phone: 909557555
               </a>
             </Box>
           </Grid>
@@ -46,14 +45,10 @@ export default function Footer({ lang }) {
             <Typography
               sx={{ fontSize: "20px", color: "#fff", textAlign: "center" }}
             >
-              {lang === "en"
-                ? "Other Page"
-                : lang === "uz"
-                ? "Boshqa sahifalar"
-                : "Другие страницы"}
+              Other Page
             </Typography>
             <Box sx={{ display: "flex", flexDirection: "column", mt: 4 }}>
-              {content[lang].headerMenuData?.links?.map((item, i) => (
+              {content[lang]?.headerMenuData?.links?.map((item, i) => (
                 <Button
                   key={i}
                   sx={{

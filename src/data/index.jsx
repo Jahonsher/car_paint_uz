@@ -150,15 +150,15 @@ export const NewsData = [
 export const ContactData = [
   {
     img: <Email sx={{ color: "white", fontSize: "30px" }} />,
-    title: "info@carpaint.uz",
+    title: "jasur03@gmail.com",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
-    link: "mailto:info@carpaint.uz",
+    link: "mailto:jasur03@gmail.com",
   },
   {
     img: <Call sx={{ color: "white", fontSize: "30px" }} />,
-    title: "+99890-955-75-55",
+    title: "90-933-78-72",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
-    link: "tel:+99890-955-75-55",
+    link: "tel:+99890-933-78-72",
   },
   {
     img: <LocationCity sx={{ color: "white", fontSize: "30px" }} />,

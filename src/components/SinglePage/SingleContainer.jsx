@@ -4,7 +4,7 @@ import { useSingleProduct } from "../../dataQuery/data.service";
 import { useParams } from "react-router-dom";
 import Loading from "../Loading/Loading";
 
-export default function SingleContainer({ lang }) {
+export default function SingleContainer({ lang, }) {
   const [imgUrl, setImgUrl] = useState("");
 
   const { id } = useParams();
@@ -81,9 +81,9 @@ export default function SingleContainer({ lang }) {
               {}
             </p>
 
-            {/* <Typography sx={{ fontSize: "34px", color: "#ffff", mt: 2 }}>
+            <Typography sx={{ fontSize: "34px", color: "#ffff", mt: 2 }}>
               30 000 so'm
-            </Typography> */}
+            </Typography>
           </Grid>
         </Grid>
       </Box>

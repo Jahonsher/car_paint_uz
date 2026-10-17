@@ -6,18 +6,18 @@ import { Suspense, lazy, useState } from "react";
 // import NewsPage from "./pages/NewsPage";
 // import ContactPage from "./pages/ContactPage";
 import Loading from "./components/Loading/Loading";
+import { readLanguage } from "./utils/storage";
+
+const HomePage = lazy(() => import("./pages/HomePage"));
+const AboutPage = lazy(() => import("./pages/AboutPage"));
+const ProductPage = lazy(() => import("./pages/ProductPage"));
+const NewsPage = lazy(() => import("./pages/NewsPage"));
+const ContactPage = lazy(() => import("./pages/ContactPage"));
+const SinglePage = lazy(() => import("./pages/SinglePage"));
 
 function App() {
-  const [lang, setLang] = useState(
-    JSON.parse(window.localStorage.getItem("lang")) || "ru"
-  );
+  const [lang, setLang] = useState(readLanguage);
 
-  const HomePage = lazy(() => import("./pages/HomePage"));
-  const AboutPage = lazy(() => import("./pages/AboutPage"));
-  const ProductPage = lazy(() => import("./pages/ProductPage"));
-  const NewsPage = lazy(() => import("./pages/NewsPage"));
-  const ContactPage = lazy(() => import("./pages/ContactPage"));
-  const SinglePage = lazy(() => import("./pages/SinglePage"));
   return (
     <div className="App">
       <BrowserRouter>

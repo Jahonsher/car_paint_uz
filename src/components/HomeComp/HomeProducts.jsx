@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Products from "./products";
 import { Box, Typography } from "@mui/material";
-import { useProducts } from "../../dataQuery/data.service";
-import { useMutation } from "@tanstack/react-query";
 import { getProducts } from "../../dataQuery/data.fn";
-import axios from "axios";
 
 export default function HomeProducts({ lang, setLang }) {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    let mounted = true;
     async function getData() {
       const query = {
         params: {
@@ -19,13 +18,15 @@ export default function HomeProducts({ lang, setLang }) {
       };
       const res = await getProducts(query);
       // console.log(res);
-      setData(res?.data);
+      if (mounted) {
+        setData(Array.isArray(res?.data) ? res.data : []);
+        setLoading(false);
+      }
     }
 
     getData();
+    return () => { mounted = false; };
   }, []);
-
-  console.log(data);
 
   return (
     <Box sx={{ background: "black", p: 4 }}>
@@ -37,13 +38,11 @@ export default function HomeProducts({ lang, setLang }) {
             textAlign: "center",
           }}
         >
-          {lang === "en"
-            ? "Our Products"
-            : lang === "ru"
-            ? "Наши продукты"
-            : "Mahsulotlarimiz"}
+          {lang === 'ru' ? 'Наша продукция' : lang === 'en' ? 'Our products' : 'Mahsulotlarimiz'}
         </Typography>
-        <Products data={data} lang={lang} setLang={setLang} />
+        {data.length ? <Products data={data} lang={lang} setLang={setLang} /> : <p className="auto-product-status" role="status">{loading
+          ? (lang === 'ru' ? 'Загрузка продукции…' : lang === 'en' ? 'Loading products…' : 'Mahsulotlar yuklanmoqda…')
+          : (lang === 'ru' ? 'Уточните ассортимент и наличие по телефону или откройте каталог.' : lang === 'en' ? 'Ask us about products and availability, or open the catalog.' : 'Assortiment va mavjudlikni telefon orqali aniqlashtiring yoki katalogni oching.')}</p>}
       </Box>
     </Box>
   );

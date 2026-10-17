@@ -7,12 +7,10 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 import "./styles/Product.scss";
-import { Link } from "react-router-dom";
 
 export default function Products({ data, lang, setLang }) {
-  console.log(data);
   return (
-    <Box sx={{ mt: 8 }}>
+    <Box sx={{ mt: 0 }}>
       <Swiper
         slidesPerView={1}
         spaceBetween={10}
@@ -46,7 +44,7 @@ export default function Products({ data, lang, setLang }) {
         style={{ paddingBottom: "50px" }}
       >
         {data?.map((v, i) => (
-          <SwiperSlide className="swiperSlideBox">
+          <SwiperSlide key={v.product_id || i} className="swiperSlideBox">
             <Box
               sx={{
                 width: "100%",
@@ -57,34 +55,38 @@ export default function Products({ data, lang, setLang }) {
               }}
               className="productBox"
             >
-              <Link key={i} to={`/single/${v.product_id}`}>
-                <img
-                  style={{
-                    width: "150px",
-                    position: "absolute",
-                    bottom: "0%",
-                    right: "0%",
-                  }}
-                  className="productImage"
-                  src={v.product_image_url[0]}
-                  alt=""
-                />
-                <Typography
-                  sx={{
-                    color: "white",
-                    fontSize: "20px",
-                    textAlign: "center",
-                    mt: 3,
-                  }}
-                  className="productText"
-                >
-                  {lang === "ru"
-                    ? v.product_title_ru
-                    : lang === "uz"
-                    ? v.product_title_uz
-                    : v.product_title_en}
-                </Typography>
-              </Link>
+              <img
+                style={{
+                  width: "70%",
+                  height: "190px",
+                  objectFit: "contain",
+                  position: "absolute",
+                  bottom: "12px",
+                  right: "15%",
+                }}
+                className="productImage"
+                src={v.product_image_url?.[0]}
+                alt={v['product_title_' + lang] || v.product_title_uz || ''}
+                loading="lazy"
+                decoding="async"
+                width="150"
+                height="190"
+              />
+              <Typography
+                sx={{
+                  color: "white",
+                  fontSize: "20px",
+                  textAlign: "center",
+                  mt: 3,
+                }}
+                className="productText"
+              >
+                {lang === "ru"
+                  ? v.product_title_ru
+                  : lang === "uz"
+                  ? v.product_title_uz
+                  : v.product_title_en}
+              </Typography>
             </Box>
           </SwiperSlide>
         ))}

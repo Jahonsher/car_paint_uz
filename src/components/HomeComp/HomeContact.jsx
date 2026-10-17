@@ -1,9 +1,25 @@
 import { Box, Button } from "@mui/material";
 import React from "react";
+import automotive from "../../localization/company";
 
 import BackgroundContact from "../../images/HomePage/HomeContact/background.png";
 
-export default function HomeContact({ lang }) {
+export default function HomeContact({ lang = 'uz', compact = false }) {
+  const text = automotive[lang] || automotive.uz;
+  if (compact) return (
+    <form className="auto-contact-form" onSubmit={event => {
+      event.preventDefault();
+      const values = new FormData(event.currentTarget);
+      const body = `${text.name}: ${values.get('name') || ''}\n${text.email}: ${values.get('email') || ''}\n${text.phone}: ${values.get('phone') || ''}`;
+      window.location.href = `mailto:info@carpaint.uz?subject=CarPaint&body=${encodeURIComponent(body)}`;
+    }}>
+      <div className="auto-field"><label htmlFor="home-name">{text.name}</label><input id="home-name" name="name" type="text" autoComplete="name" placeholder={text.name} /></div>
+      <div className="auto-field"><label htmlFor="home-email">{text.email}</label><input id="home-email" name="email" type="email" autoComplete="email" placeholder="you@example.com" /></div>
+      <div className="auto-field"><label htmlFor="home-phone">{text.phone}</label><input id="home-phone" name="phone" type="tel" autoComplete="tel" placeholder="+998" /></div>
+      <p className="company-form-note">{text.formNote}</p>
+      <button className="auto-button company-form-action" type="submit">{text.emailAction} ↗</button>
+    </form>
+  );
   return (
     <Box
       sx={{
@@ -26,13 +42,7 @@ export default function HomeContact({ lang }) {
         className="globalContainer"
       >
         <Box sx={{ display: "flex", flexDirection: "column" }}>
-          <label style={{ color: "white" }}>
-            {lang === "en"
-              ? "Your Name"
-              : lang === "uz"
-              ? "Sizning ismingiz"
-              : "Ваше имя"}
-          </label>
+          <label style={{ color: "white" }}>Your Name</label>
           <input
             type="text"
             placeholder="Enter your name"
@@ -48,13 +58,7 @@ export default function HomeContact({ lang }) {
         </Box>
 
         <Box sx={{ display: "flex", flexDirection: "column", mt: 3 }}>
-          <label style={{ color: "white" }}>
-            {lang === "en"
-              ? "Your Email"
-              : lang === "uz"
-              ? "Elektron pochta manzili"
-              : "Ваш адрес электронной почты"}
-          </label>
+          <label style={{ color: "white" }}>Your Email</label>
           <input
             type="email"
             placeholder="Enter your email"
@@ -70,13 +74,7 @@ export default function HomeContact({ lang }) {
           />
         </Box>
         <Box sx={{ display: "flex", flexDirection: "column", mt: 3 }}>
-          <label style={{ color: "white" }}>
-            {lang === "en"
-              ? "Your Number"
-              : lang === "uz"
-              ? "Telefon raqamingiz"
-              : "Твой номер"}
-          </label>
+          <label style={{ color: "white" }}>Your Number</label>
           <input
             type="text"
             placeholder="Enter your number"
@@ -93,7 +91,7 @@ export default function HomeContact({ lang }) {
         </Box>
 
         <Button fullWidth color="error" variant="contained" sx={{ mt: 3 }}>
-          Отправить
+          Submit
         </Button>
       </Box>
     </Box>

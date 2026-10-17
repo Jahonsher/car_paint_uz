@@ -3,7 +3,6 @@ import {
   getBrands,
   getCategories,
   getNews,
-  getPartners,
   getSingleProduct,
   getSubCategories,
 } from "./data.fn";
@@ -29,6 +28,3 @@ export const useSingleProduct = (id) =>
 
 export const useNews = (params) =>
   useQuery({ queryFn: () => getNews(params), queryKey: ["news"] });
-  
-export const usePartners = (params) =>
-useQuery({ queryFn: () => getPartners(params), queryKey: ["partner"] });

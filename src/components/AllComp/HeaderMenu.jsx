@@ -7,7 +7,7 @@ import {
   useTheme,
 } from "@mui/material";
 import React, { useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 
 import DrawerComp from "../AllComp/DrawerComp";
 import { Call, Email, LocationCity } from "@mui/icons-material";
@@ -153,7 +153,7 @@ export default function HeaderMenu({ lang, setLang }) {
                         display: { xs: "none", sm: "block" },
                       }}
                     >
-                      {content[lang].headerMenuData?.links?.map((item, i) => (
+                      {content[lang]?.headerMenuData?.links?.map((item, i) => (
                         <Button
                           key={i}
                           sx={{
@@ -172,23 +172,16 @@ export default function HeaderMenu({ lang, setLang }) {
                 <Box
                   sx={{ display: "flex", alignItems: "center", gap: "20px" }}
                 >
-                  <Link to="/contact">
-                    <Button
-                      variant="contained"
-                      color="error"
-                      sx={{
-                        background: "#343434",
-                        "&:hover": { background: "#343434" },
-                      }}
-                    >
-                      {lang === "en"
-                        ? "Contact"
-                        : lang === "uz"
-                        ? "Bog'lanish"
-                        : "Контакт"}
-                    </Button>
-                  </Link>
-
+                  <Button
+                    variant="contained"
+                    color="error"
+                    sx={{
+                      background: "#343434",
+                      "&:hover": { background: "#343434" },
+                    }}
+                  >
+                    Contact
+                  </Button>
                   <LanguageComp lang={lang} setLang={setLang} />
                 </Box>
               </Box>

@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# CarPaint
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React 18 + Create React App (`react-scripts` 5) loyihasi. Stek almashtirilmagan.
+Tekshirishda Node.js 24.21.0 ishlatilgan.
 
-## Available Scripts
+## Lokal ishga tushirish
 
-In the project directory, you can run:
+```sh
+npm install
+npm run dev
+```
 
-### `npm start`
+Standart manzil: http://localhost:3000. `npm start` ham mavjud.
+Terminalda server ko‘rsatgan manzilni oching; `Ctrl+C` serverni to‘xtatadi.
+PowerShell `npm.ps1`ni bloklasa, `npm.cmd install` va `npm.cmd run dev` ishlating.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Environment
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+`.env` majburiy emas: API manzili uchun kodda ommaviy standart qiymat mavjud.
+O‘zgartirish kerak bo‘lsa, `.env.example`dan `.env` nusxasini yarating:
 
-### `npm test`
+```powershell
+Copy-Item .env.example .env
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- `REACT_APP_API_URL`: API bazaviy manzili. Standart: `https://server.carpaint.uz/api/v1`.
+- `PORT`: ixtiyoriy lokal port; standart `3000`.
 
-### `npm run build`
+Environment o‘zgarsa, dev serverni qayta ishga tushiring. CRA `REACT_APP_*`
+qiymatlarini brauzerga chiqaradi; ularga maxfiy token, parol yoki server kaliti yozmang.
+Frontend uchun yetishmayotgan majburiy maxfiy qiymat yo‘q. API ishlamasa, katalog
+xato holatini ko‘rsatadi; fotogalereya va kontaktlar mustaqil ishlaydi. Joriy
+assortiment va narxlarni tekshirish uchun haqiqiy API ishlashi kerak.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Tekshirish
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```sh
+npm run build
+npm run preview
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Production ko‘rinishi: http://127.0.0.1:4173.
 
-### `npm run eject`
+```sh
+npm test -- --watchAll=false --runInBand src/utils/storage.test.js
+npm run test:e2e
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+E2E testdan oldin `npm run build` bajaring. Playwright konfiguratsiyasi lokal
+Chrome brauzeridan (`channel: chrome`) foydalanadi. Chrome o‘rnatilgan bo‘lishi kerak.
+Testlar API javoblarini mock qiladi; ular jonli narxlar yoki ombor qoldig‘ini tasdiqlamaydi.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Ishlab turgan dev serverni sinash uchun (PowerShell):
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```powershell
+$env:PLAYWRIGHT_BASE_URL = 'http://127.0.0.1:3000'
+npm.cmd run test:e2e
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+`PLAYWRIGHT_BASE_URL` faqat test vositasiga tegishli; frontend uchun majburiy emas.
 
-## Learn More
+## Rasmlar va mazmun
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`public/images` ichidagi asl rasmlar va `public/images/optimized` variantlari
+repositoryda saqlanadi. Ularni ignore qilmang. Responsive WebP fayllarini qayta yaratish:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```sh
+node scripts/optimize-showroom.cjs
+```
 
-### Code Splitting
+Mazmun va fotosuratlar manbalari: [COMPANY-SOURCES.md](src/assets/COMPANY-SOURCES.md).
+Murojaat maydonlari foydalanuvchining email ilovasida xat tayyorlaydi; avtomatik
+server orqali yuborish yoki to‘lov xizmati ulanmagan.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## GitHub
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Loyiha repozitoriysi: https://github.com/Saydakbarov/car_paint_uz.
+`node_modules`, build va test natijalari, lokal sozlamalar hamda maxfiy fayllar
+`.gitignore` orqali repozitoriydan chiqarilgan. `.env.example` saqlanadi.

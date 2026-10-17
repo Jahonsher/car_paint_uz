@@ -24,10 +24,17 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "dev": "react-scripts start",
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "preview": "node scripts/preview.cjs",
+    "test:e2e": "playwright test tests/automotive.spec.cjs",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "7.21.11",
+    "@playwright/test": "1.64.1"
   },
   "eslintConfig": {
     "extends": [

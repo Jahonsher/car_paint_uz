@@ -43,11 +43,3 @@ export const getNews = async (params) =>
     })
     .then((res) => res.data)
     .catch((err) => err);
-
-export const getPartners = async (params) =>
-  axios
-    .get("partners", {
-      params,
-    })
-    .then((res) => res.data)
-    .catch((err) => err);

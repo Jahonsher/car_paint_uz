@@ -1,7 +1,5 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { IconButton } from "@mui/material";
 import { PlayArrow } from "@mui/icons-material";
@@ -11,8 +9,7 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: { xs: "300px", sm: "350px", md: "450px", lg: "550px" },
-
+  width: "min(800px, calc(100% - 32px))",
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
@@ -20,20 +17,14 @@ const style = {
   height: "400px",
 };
 
-export default function ModalVideo({ videoSrc }) {
-  console.log(videoSrc);
+export default function ModalVideo({ videoSrc, label = 'Play video', closeLabel = 'Close video' }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   return (
-    <Box
-      sx={{
-        margin: "0 auto",
-        textAlign: "center",
-        padding: "10px",
-      }}
-    >
+    <div style={{ margin: "0 auto", textAlign: "center" }}>
       <IconButton
+        aria-label={label}
         sx={{
           background: "red",
           p: 1,
@@ -48,12 +39,11 @@ export default function ModalVideo({ videoSrc }) {
       <Modal
         open={open}
         onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
+        <Box sx={style} role="dialog" aria-modal="true" aria-label={label} tabIndex={-1}>
+          <IconButton aria-label={closeLabel} onClick={handleClose} sx={{ position: 'absolute', top: 8, right: 8, background: '#242522', color: '#fff', zIndex: 1 }}>×</IconButton>
           <iframe
-            title="YouTube Video"
+            title={label}
             width="100%"
             height="100%"
             src={`https://www.youtube.com/embed/${videoSrc}`}
@@ -62,6 +52,6 @@ export default function ModalVideo({ videoSrc }) {
           ></iframe>
         </Box>
       </Modal>
-    </Box>
+    </div>
   );
 }

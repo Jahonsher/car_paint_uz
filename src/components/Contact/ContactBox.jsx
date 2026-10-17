@@ -32,9 +32,9 @@ export default function ContactBox() {
                 <Typography sx={{ color: "white", fontSize: "18px", mt: 2 }}>
                   {v.title}
                 </Typography>
-                {/* <Typography sx={{ color: "white", fontSize: "16px", mt: 2 }}>
+                <Typography sx={{ color: "white", fontSize: "16px", mt: 2 }}>
                   {v.text}
-                </Typography> */}
+                </Typography>
               </a>
             </Grid>
           ))}

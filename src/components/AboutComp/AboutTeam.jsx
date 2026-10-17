@@ -1,7 +1,7 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
 import React from "react";
 
-export default function AboutTeam({ lang }) {
+export default function AboutTeam() {
   return (
     <Box
       sx={{
@@ -56,18 +56,19 @@ export default function AboutTeam({ lang }) {
               alt=""
             />
             <Typography sx={{ fontSize: "24px", color: "white" }}>
-              Orbay - ORBAY Chemicals Ltd.
+              Experience Team Work
             </Typography>
             <Typography sx={{ fontSize: "18px", color: "gray", mt: 2 }}>
-              {lang === "uz"
-                ? "avtomobil ta'mirlash bo'yoqlari, yordamchi mahsulotlar, sanoat bo'yoqlari, izolyatsion mastikalar ishlab chiqarish uchun 2002 yilda Bursa shahrida tashkil etilgandan beri o`z faoliyatini olib bormoqda. Ilg'or avtomatlashtirish tizimi tufayli u 280 dona mahsulotni yuqori sifatli va maksimal tezlikda va doimiy ravishda bir xil standartlarga muvofiq ishlab chiqarishga qodir."
-                : lang === "ru"
-                ? "работает с момента своего основания в Бурсе в 2002 году по производству авторемонтных красок, вспомогательных продуктов, промышленных красок, изоляционных мастик. Благодаря передовой системе автоматизации он способен производить 280 изделий высокого качества, с максимальной скоростью и последовательно по одним и тем же стандартам."
-                : "has been operating since its establishment in Bursa in 2002 for the production of car repair paints, auxiliary products, industrial paints, insulating mastics. Thanks to the advanced automation system, it is able to produce 280 pieces of high quality and at maximum speed and consistently according to the same standards."}
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim venia. Quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur.
             </Typography>
 
             <Button variant="contained" color="error" sx={{ mt: 3 }}>
-              Подробнее
+              Learn More
             </Button>
           </Grid>
         </Grid>
@@ -93,18 +94,19 @@ export default function AboutTeam({ lang }) {
               alt=""
             />
             <Typography sx={{ fontSize: "24px", color: "white" }}>
-              Axalta
+              Experience Team Work
             </Typography>
             <Typography sx={{ fontSize: "18px", color: "gray", mt: 2 }}>
-              {lang === "uz"
-                ? "dunyodagi eng yirik avtomobil ishlab chiqaruvchilardan tortib kichik firmalarga o`z maxsulotlarini yetkazib beruvchi eng oldi ishlab chiqaruvchi xisoblanadi. Axalta Coating Systems Yuqori sifatli xisoblanib, qoplamalar Evropada ishlab chiqariladi va turli sohalarda dekorativ ranglarni qoplash, yuqori va past haroratdan himoya qilish, bo'yalgan sirtlarning uzoq umr ko'rish uchun ishlatiladi."
-                : lang === "ru"
-                ? "Считается ведущим производителем, поставляющим свою продукцию от крупнейших мировых автопроизводителей небольшим компаниям. Axalta Coating Systems Высококачественные покрытия производятся в Европе и используются в различных отраслях промышленности для покрытия декоративных красок, защиты от высоких и низких температур, продления срока службы окрашенных поверхностей."
-                : "It is considered the leading manufacturer that supplies its products from the world's largest car manufacturers to small companies. Axalta Coating Systems High quality coatings are manufactured in Europe and are used in various industries to cover decorative colors, protect against high and low temperatures, and prolong the life of painted surfaces."}
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim venia. Quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur.
             </Typography>
 
             <Button variant="contained" color="error" sx={{ mt: 3 }}>
-              Подробнее
+              Learn More
             </Button>
           </Grid>
 
@@ -179,18 +181,19 @@ export default function AboutTeam({ lang }) {
               alt=""
             />
             <Typography sx={{ fontSize: "24px", color: "white" }}>
-              CST Kimya Coating Solutions & Technologie
+              Experience Team Work
             </Typography>
             <Typography sx={{ fontSize: "18px", color: "gray", mt: 2 }}>
-              {lang === "uz"
-                ? "Metall uchun professional bo'yoqlar - Turkiyadagi eng yirik yetkazib beruvchi kompaniyalardan va sizga eng yaxshi narxlar va optimal sifatni taklif eta oladigan turk kompaniyasining yetakchisidir."
-                : lang === "ru"
-                ? "Профессиональные краски по металлу – один из крупнейших поставщиков Турции и лидер турецкой компании, способный предложить вам лучшие цены и оптимальное качество."
-                : "Professional paints for metal is one of the largest suppliers in Turkey and the leader of the Turkish company that can offer you the best prices and optimal quality."}
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim venia. Quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur.
             </Typography>
 
             <Button variant="contained" color="error" sx={{ mt: 3 }}>
-              Подробнее
+              Learn More
             </Button>
           </Grid>
         </Grid>

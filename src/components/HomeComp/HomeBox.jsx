@@ -4,7 +4,7 @@ import React from "react";
 
 import BackgroundBox from "../../images/HomePage/HomeBox/bacground.png";
 
-export default function HomeBox({ lang }) {
+export default function HomeBox() {
   return (
     <Box
       sx={{
@@ -24,16 +24,12 @@ export default function HomeBox({ lang }) {
               fontWeight: "bold",
             }}
           >
-            {lang === "uz"
-              ? "Nega aynan biz?"
-              : lang === "ru"
-              ? "Почему мы?"
-              : "Why us?"}
+            Why Trust Us?
           </Typography>
 
           <Grid
             container
-            gap={5}
+            gap={2}
             mt={4}
             sx={{ pt: 4, borderTop: "2px solid gray", p: 2 }}
           >
@@ -48,31 +44,11 @@ export default function HomeBox({ lang }) {
                   borderRadius: "50%",
                 }}
               />
-              <Typography sx={{ color: "#fff", fontSize: "20px", mt: 2 }}>
-                {lang === "uz"
-                  ? "Carpaint - mahsulot sifatiga ishonch demakdir.  Bizning xodimlarimiz o'z ishlariga sodiqdirlar "
-                  : lang === "ru"
-                  ? "Carpaint – это уверенность в качестве продукции. Наши сотрудники преданы своей работе"
-                  : "Carpaint means confidence in product quality. Our employees are committed to their work"}
+              <Typography sx={{ color: "#fff", fontSize: "24px", mt: 2 }}>
+                Experienced Professionals
               </Typography>
-            </Grid>
-            <Grid item lg={2.7} md={2.7} sm={5} xs={11}>
-              <Check
-                sx={{
-                  color: "white",
-                  p: 1,
-                  background: "red",
-                  fontSize: "24px",
-                  fontWeight: "bold",
-                  borderRadius: "50%",
-                }}
-              />
-              <Typography sx={{ color: "#fff", fontSize: "20px", mt: 2 }}>
-                {lang === "uz"
-                  ? "Barcha mahsulotlar brendlari bo'yicha mijozlarimizga eng yuqori darajadagi sifatli xizmatni taqdim etadilar. "
-                  : lang == "ru"
-                  ? "Они обеспечивают высочайший уровень качества обслуживания наших клиентов по всем брендам продукции."
-                  : "They provide the highest level of quality service to our customers across all product brands."}
+              <Typography sx={{ color: "gray", fontSize: "18px", mt: 1 }}>
+                No hidden charges. Honest service every time.
               </Typography>
             </Grid>
             <Grid item lg={2.7} md={2.7} sm={5} xs={11}>
@@ -87,11 +63,46 @@ export default function HomeBox({ lang }) {
                 }}
               />
               <Typography sx={{ color: "#fff", fontSize: "24px", mt: 2 }}>
-                {lang === "uz"
-                  ? "Carpaint da  ranglarning mukammal moslashuvi uchun cheksiz rang tanlovini taklif etamiz."
-                  : lang === "ru"
-                  ? "В Carpaint мы предлагаем неограниченный выбор цветов для идеального сочетания цветов."
-                  : "At Carpaint, we offer an unlimited choice of colors for the perfect color match."}
+                Experienced Professionals
+              </Typography>
+              <Typography sx={{ color: "gray", fontSize: "18px", mt: 1 }}>
+                No hidden charges. Honest service every time.
+              </Typography>
+            </Grid>
+            <Grid item lg={2.7} md={2.7} sm={5} xs={11}>
+              <Check
+                sx={{
+                  color: "white",
+                  p: 1,
+                  background: "red",
+                  fontSize: "24px",
+                  fontWeight: "bold",
+                  borderRadius: "50%",
+                }}
+              />
+              <Typography sx={{ color: "#fff", fontSize: "24px", mt: 2 }}>
+                Experienced Professionals
+              </Typography>
+              <Typography sx={{ color: "gray", fontSize: "18px", mt: 1 }}>
+                No hidden charges. Honest service every time.
+              </Typography>
+            </Grid>
+            <Grid item lg={2.7} md={2.7} sm={5} xs={11}>
+              <Check
+                sx={{
+                  color: "white",
+                  p: 1,
+                  background: "red",
+                  fontSize: "24px",
+                  fontWeight: "bold",
+                  borderRadius: "50%",
+                }}
+              />
+              <Typography sx={{ color: "#fff", fontSize: "24px", mt: 2 }}>
+                Experienced Professionals
+              </Typography>
+              <Typography sx={{ color: "gray", fontSize: "18px", mt: 1 }}>
+                No hidden charges. Honest service every time.
               </Typography>
             </Grid>
           </Grid>
