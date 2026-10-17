@@ -28,7 +28,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "preview": "node scripts/preview.cjs",
-    "test:e2e": "playwright test tests/automotive.spec.cjs",
+    "test:e2e": "playwright test tests/automotive.spec.cjs tests/paint-studio.spec.cjs",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

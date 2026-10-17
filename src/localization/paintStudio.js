@@ -1,0 +1,40 @@
+const paintStudio = {
+  uz: {
+    eyebrow: 'INTERAKTIV RANG STUDIYASI', title: 'Avval ko‘ring. Keyin tanlang.',
+    intro: 'Avtomobil shaklini tanlang, rangni sinab ko‘ring va yangi ko‘rinishni tasavvur qiling.',
+    model: 'Avtomobil shakli', models: ['Sedan', 'SUV', 'Kupe'], color: 'Kuzov rangi',
+    colors: ['Qizil', 'Okean ko‘k', 'Zumrad', 'Grafit', 'Marvarid oq', 'Kumush', 'Shampan', 'Binafsha'],
+    finish: 'Qoplama', gloss: 'Yaltiroq', satin: 'Satin', apply: 'Rangni qo‘llash', again: 'Qayta bo‘yash',
+    ready: 'Rang tanlang va bo‘yashni boshlang', painting: 'Rang sepilmoqda…', done: 'Yangi ko‘rinish tayyor',
+    before: 'Oldin', after: 'Natija', compare: 'Ko‘rinishni solishtirish', reset: 'Qayta boshlash',
+    selected: 'Tanlangan rang', preview: 'Avtomobil rangining ko‘rgazmali maketi',
+    note: 'Bu ko‘rgazmali maket. Ekrandagi rang va yaltiroqlik haqiqiy qoplamadan farq qilishi mumkin. Yakuniy rangni bo‘yoq namunasi orqali tanlang.',
+    ask: 'Shu rang haqida so‘rash', studio: 'Rangni sinab ko‘rish',
+  },
+  ru: {
+    eyebrow: 'ИНТЕРАКТИВНАЯ СТУДИЯ ЦВЕТА', title: 'Сначала примерьте цвет.',
+    intro: 'Выберите силуэт автомобиля, попробуйте цвет и оцените новый образ.',
+    model: 'Форма автомобиля', models: ['Седан', 'SUV', 'Купе'], color: 'Цвет кузова',
+    colors: ['Красный', 'Океанский синий', 'Изумрудный', 'Графит', 'Жемчужный белый', 'Серебристый', 'Шампань', 'Фиолетовый'],
+    finish: 'Покрытие', gloss: 'Глянцевое', satin: 'Сатиновое', apply: 'Нанести цвет', again: 'Покрасить снова',
+    ready: 'Выберите цвет и начните покраску', painting: 'Наносим цвет…', done: 'Новый образ готов',
+    before: 'До', after: 'Результат', compare: 'Сравнение цвета', reset: 'Начать заново',
+    selected: 'Выбранный цвет', preview: 'Иллюстрация цвета автомобиля',
+    note: 'Это иллюстрация. Цвет и блеск на экране могут отличаться от реального покрытия. Выбирайте окончательный цвет по образцу краски.',
+    ask: 'Спросить об этом цвете', studio: 'Примерить цвет',
+  },
+  en: {
+    eyebrow: 'INTERACTIVE COLOR STUDIO', title: 'See it. Then choose it.',
+    intro: 'Choose a body style, try a color and explore a new look for your car.',
+    model: 'Body style', models: ['Sedan', 'SUV', 'Coupe'], color: 'Body color',
+    colors: ['Racing red', 'Ocean blue', 'Emerald', 'Graphite', 'Pearl white', 'Silver', 'Champagne', 'Violet'],
+    finish: 'Finish', gloss: 'Gloss', satin: 'Satin', apply: 'Apply color', again: 'Paint again',
+    ready: 'Choose a color and start painting', painting: 'Applying color…', done: 'Your new look is ready',
+    before: 'Before', after: 'Result', compare: 'Compare the finish', reset: 'Start over',
+    selected: 'Selected color', preview: 'Illustrated vehicle color preview',
+    note: 'This is an illustration. Screen color and gloss may differ from the real finish. Choose your final color using a physical paint sample.',
+    ask: 'Ask about this color', studio: 'Try a color',
+  },
+};
+
+export default paintStudio;

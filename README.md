@@ -72,6 +72,14 @@ Mazmun va fotosuratlar manbalari: [COMPANY-SOURCES.md](src/assets/COMPANY-SOURCE
 Murojaat maydonlari foydalanuvchining email ilovasida xat tayyorlaydi; avtomatik
 server orqali yuborish yoki to‘lov xizmati ulanmagan.
 
+## Rang studiyasi
+
+Bosh sahifadagi `#paint-studio` bo‘limida sedan, SUV va kupe maketlari uchun
+8 ta rang, yaltiroq/satin qoplama, bo‘yoq sepish animatsiyasi va oldin/natija
+solishtirishi mavjud. Ranglar ekran uchun ko‘rgazmali namuna; haqiqiy bo‘yoq
+retsepti yoki muayyan avtomobil modelining aniq tasviri hisoblanmaydi.
+Harakatni kamaytirish sozlamasi yoqilganda natija animatsiyasiz ko‘rsatiladi.
+
 ## GitHub
 
 Loyiha repozitoriysi: https://github.com/Jahonsher/car_paint_uz.

@@ -1,0 +1,102 @@
+.paint-studio { padding-block: 86px; scroll-margin-top: 24px; }
+.paint-studio .auto-section-head { align-items: flex-end; }
+.paint-studio .auto-section-head h2 { max-width: 680px; }
+.paint-studio-intro { max-width: 350px; color: var(--muted); font-size: 15px; line-height: 1.8; }
+.paint-workspace { display: grid; grid-template-columns: 320px minmax(0, 1fr); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: white; box-shadow: 0 18px 55px #171c2308; }
+.paint-controls { padding: 30px; }
+.paint-controls fieldset { border: 0; padding: 0; margin: 0 0 25px; min-width: 0; }
+.paint-controls legend { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; margin-bottom: 15px; padding: 0; }
+.paint-controls legend > span { color: var(--red); font-size: 10px; letter-spacing: .04em; }
+.paint-models, .paint-finishes { display: flex; gap: 7px; }
+.paint-controls label { position: relative; cursor: pointer; }
+.paint-models label, .paint-finishes label { display: grid; place-items: center; flex: 1; min-height: 43px; border: 1px solid var(--line); border-radius: 5px; background: var(--paper); color: var(--muted); font-size: 12px; font-weight: 700; transition: background .2s, border-color .2s, color .2s; }
+.paint-models label.is-selected, .paint-finishes label.is-selected { border-color: var(--ink); background: var(--ink); color: white; }
+.paint-controls label:has(input:focus-visible) { outline: 3px solid var(--red); outline-offset: 4px; }
+.paint-controls input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+.paint-controls fieldset:disabled { opacity: .55; }
+.paint-controls fieldset:disabled input { cursor: wait; }
+.paint-swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.paint-swatches label { display: grid; place-items: center; height: 42px; border-radius: 6px; background: var(--swatch); border: 1px solid #00000015; }
+.paint-swatches label.is-selected { outline: 2px solid var(--ink); outline-offset: 3px; }
+.paint-swatches label > span { display: grid; place-items: center; width: 20px; height: 20px; background: #fff; color: #171c23; border-radius: 50%; font-weight: 900; font-size: 12px; pointer-events: none; }
+.paint-swatches label:not(.is-selected) > span { visibility: hidden; }
+.paint-color-name { display: flex; justify-content: space-between; gap: 8px; align-items: center; margin-top: 16px; font-size: 12px; }
+.paint-color-name > span { font-size: 10px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.auto-home .paint-apply { width: 100%; font-size: 13px; padding: 15px 18px; min-height: 52px; }
+.paint-apply:disabled { cursor: wait; transform: none; box-shadow: none; background: #bd1f26; }
+.paint-stage { display: flex; flex-direction: column; min-width: 0; position: relative; overflow: hidden; background: #151c27; color: #ecf0f5; }
+.paint-stage-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 25px 28px; font-size: 10px; letter-spacing: .1em; color: #a6b2c1; }
+.paint-stage-top b { color: white; padding-left: 8px; }
+.paint-car-scene { display: grid; align-items: center; position: relative; flex: 1; min-height: 300px; background: radial-gradient(ellipse at 52% 43%, #354252 0%, #1b2532 40%, #151c27 75%); }
+.paint-car { position: relative; display: block; width: 100%; overflow: visible; z-index: 1; }
+.paint-studio-ring { position: absolute; width: 84%; height: 34%; left: 8%; top: 62%; border: 1px solid #7e93ad20; border-radius: 50%; background: radial-gradient(ellipse, #ffffff05, transparent 70%); transform: scaleY(.6); }
+.paint-stage-bottom { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 16px 28px 23px; }
+.paint-status { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #c4cdd8; }
+.paint-status i { width: 6px; height: 6px; flex-shrink: 0; border-radius: 50%; background: #98a5b8; }
+.paint-stage[data-phase='painting'] .paint-status i { background: #ff777c; animation: paint-pulse .6s ease-in-out infinite alternate; }
+.paint-stage[data-phase='done'] .paint-status i { background: #6ed8a0; }
+.paint-reset { background: none; border: 0; padding: 8px 0; font-size: 11px !important; color: #c4cdd8; cursor: pointer; }
+.paint-reset:disabled { opacity: .4; cursor: default; }
+.paint-progress { height: 3px; background: #ffffff0d; overflow: hidden; }
+.paint-progress > span { display: block; height: 100%; background: var(--red); transform: scaleX(0); transform-origin: left; }
+.paint-stage[data-phase='painting'] .paint-progress > span { animation: paint-progress 2.6s linear forwards; }
+.paint-stage[data-phase='done'] .paint-progress > span { transform: scaleX(1); }
+.paint-result-bar { padding: 17px 26px; border-top: 1px solid #ffffff0a; background: #101722; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.paint-result-bar > div:first-child { display: flex; align-items: center; gap: 9px; font-size: 12px; font-weight: 700; }
+.paint-result-dot { display: block; width: 16px; height: 16px; border: 1px solid #ffffff30; border-radius: 50%; }
+.paint-comparison { display: flex; gap: 3px; border: 1px solid #ffffff26; padding: 3px; border-radius: 6px; }
+.paint-comparison button { border: 0; border-radius: 3px; background: transparent; color: #aab6c6; font-size: 11px !important; padding: 7px 13px; cursor: pointer; font-weight: 700 !important; }
+.paint-comparison button[aria-pressed='true'] { background: #e8edf4; color: #171c23; }
+.paint-comparison button:disabled { opacity: .45; cursor: default; }
+.paint-studio-foot { display: flex; align-items: flex-start; justify-content: space-between; gap: 30px; padding-top: 22px; }
+.paint-studio-foot > p { max-width: 740px; font-size: 12px; line-height: 1.8; color: var(--muted); }
+.paint-studio-foot > a { flex-shrink: 0; }
+.paint-color-layer.is-painting { animation: paint-body 2.6s linear both; }
+.paint-spray { animation: paint-pass 2.6s linear both; }
+@keyframes paint-body { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes paint-pass { 0% { transform: translateX(35px); opacity: 0; } 8% { opacity: 1; } 92% { opacity: 1; } 100% { transform: translateX(790px); opacity: 0; } }
+@keyframes paint-progress { to { transform: scaleX(1); } }
+@keyframes paint-pulse { to { opacity: .3; } }
+@media (max-width: 1100px) {
+  .paint-workspace { grid-template-columns: 285px minmax(0, 1fr); }
+  .paint-controls { padding: 25px; }
+  .paint-stage-top, .paint-stage-bottom { padding-inline: 20px; }
+  .paint-stage-bottom { flex-wrap: wrap; gap: 5px; }
+}
+@media (max-width: 899px) {
+  .paint-studio .auto-section-head { align-items: flex-start; flex-direction: column; gap: 18px; }
+  .paint-studio-intro { max-width: 550px; }
+  .paint-workspace { grid-template-columns: 1fr; }
+  .paint-stage { grid-row: 1; }
+  .paint-car-scene { min-height: 0; }
+  .paint-car { max-height: 370px; }
+  .paint-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .paint-controls fieldset { margin: 0; }
+  .paint-apply { align-self: end; }
+  .paint-stage-bottom { flex-wrap: nowrap; }
+}
+@media (max-width: 600px) {
+  .paint-studio { padding-block: 55px; }
+  .paint-stage-top { font-size: 8px; padding: 20px 15px 8px; gap: 10px; letter-spacing: .06em; }
+  .paint-stage-top b { padding-left: 4px; }
+  .paint-car-scene { padding-block: 12px; }
+  .paint-stage-bottom { padding: 5px 15px 14px; flex-wrap: wrap; }
+  .paint-status { font-size: 11px; }
+  .paint-result-bar { padding: 12px 15px; gap: 8px; }
+  .paint-result-bar > div:first-child { font-size: 11px; }
+  .paint-comparison button { padding: 7px 10px; }
+  .paint-controls { padding: 22px; gap: 22px; grid-template-columns: 1fr; }
+  .paint-swatches { grid-template-columns: repeat(8, 1fr); gap: 8px; }
+  .paint-swatches label { height: 30px; border-radius: 4px; }
+  .paint-swatches label > span { width: 16px; height: 16px; font-size: 10px; }
+  .paint-studio-foot { flex-direction: column; gap: 15px; }
+}
+@media (max-width: 370px) {
+  .paint-swatches { grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .paint-swatches label { height: 36px; }
+  .paint-result-bar { flex-wrap: wrap; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .paint-color-layer.is-painting { clip-path: none; }
+  .paint-spray { display: none; }
+}
