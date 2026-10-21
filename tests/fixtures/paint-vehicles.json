@@ -1,0 +1,272 @@
+[
+  {
+    "uid": "da4b8f0266304991a8d45955b96cb3cf",
+    "label": "Daewoo Nexia 1",
+    "material": {
+      "name": "carpaint",
+      "stateSetID": 6,
+      "channels": {
+        "AlbedoPBR": {
+          "color": [
+            0.941,
+            0.941,
+            0.941
+          ],
+          "enable": true,
+          "factor": 1
+        },
+        "GlossinessPBR": {
+          "enable": true,
+          "factor": 0.2504841915342366
+        },
+        "RoughnessPBR": {
+          "enable": false,
+          "factor": 0.6
+        }
+      }
+    }
+  },
+  {
+    "uid": "7356a1413a384f7f8290ddfbdee11a7f",
+    "label": "Daewoo Nexia 2",
+    "material": {
+      "name": "carpaint",
+      "stateSetID": 1,
+      "channels": {
+        "AlbedoPBR": {
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "enable": true,
+          "factor": 1
+        },
+        "GlossinessPBR": {
+          "enable": false,
+          "factor": 1
+        },
+        "RoughnessPBR": {
+          "enable": true,
+          "factor": 0.6203166735814809
+        }
+      }
+    }
+  },
+  {
+    "uid": "eb18b11b97834da295fc170b39fd2a84",
+    "label": "Chevrolet Spark",
+    "material": {
+      "name": "body",
+      "stateSetID": 2,
+      "channels": {
+        "AlbedoPBR": {
+          "color": [
+            0.745098,
+            0.831373,
+            0.262745
+          ],
+          "enable": true,
+          "factor": 1
+        },
+        "GlossinessPBR": {
+          "enable": false,
+          "factor": 0.4
+        },
+        "RoughnessPBR": {
+          "enable": true,
+          "factor": 0.6
+        }
+      }
+    }
+  },
+  {
+    "uid": "d08929608f2343a8b93650cca33110fd",
+    "label": "Daewoo Damas",
+    "material": {
+      "name": "carpaint",
+      "stateSetID": 1,
+      "channels": {
+        "AlbedoPBR": {
+          "color": [
+            0.917647,
+            0.917647,
+            0.917647
+          ],
+          "enable": true,
+          "factor": 1
+        },
+        "GlossinessPBR": {
+          "enable": false,
+          "factor": 0.4
+        },
+        "RoughnessPBR": {
+          "enable": true,
+          "factor": 0.6
+        }
+      }
+    }
+  },
+  {
+    "uid": "a155e069dbf84db0b3454ba313d0e79f",
+    "label": "Chevrolet Malibu",
+    "material": {
+      "name": "malibupaint",
+      "stateSetID": 1,
+      "channels": {
+        "AlbedoPBR": {
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "enable": true,
+          "factor": 1
+        },
+        "GlossinessPBR": {
+          "enable": false,
+          "factor": 0.4
+        },
+        "RoughnessPBR": {
+          "enable": true,
+          "factor": 0
+        }
+      }
+    }
+  },
+  {
+    "uid": "a26600f16c544a15886dfa6ad1877622",
+    "label": "Chevrolet Captiva",
+    "material": {
+      "name": "carpaint",
+      "stateSetID": 5,
+      "channels": {
+        "AlbedoPBR": {
+          "color": [
+            0.898039,
+            0.898039,
+            0.898039
+          ],
+          "enable": true,
+          "factor": 1
+        },
+        "GlossinessPBR": {
+          "enable": false,
+          "factor": 0.4
+        },
+        "RoughnessPBR": {
+          "enable": true,
+          "factor": 0.6
+        }
+      }
+    }
+  },
+  {
+    "uid": "f9b935582076423790864ee5a66d0178",
+    "label": "Chevrolet Equinox",
+    "material": {
+      "name": "carpaint.071",
+      "stateSetID": 6,
+      "channels": {
+        "AlbedoPBR": {
+          "color": [
+            0.176471,
+            0.168627,
+            0.152941
+          ],
+          "enable": true,
+          "factor": 1
+        },
+        "GlossinessPBR": {
+          "enable": false,
+          "factor": 0.4
+        },
+        "RoughnessPBR": {
+          "enable": true,
+          "factor": 0.642229
+        }
+      }
+    }
+  },
+  {
+    "uid": "39023a9e79d14a0b881a4c12bce4ddcd",
+    "label": "Chevrolet Orlando",
+    "material": {
+      "name": "carpaint",
+      "stateSetID": 4,
+      "channels": {
+        "AlbedoPBR": {
+          "color": [
+            0.941,
+            0.941,
+            0.941
+          ],
+          "enable": true,
+          "factor": 1
+        },
+        "GlossinessPBR": {
+          "enable": true,
+          "factor": 1
+        },
+        "RoughnessPBR": {
+          "enable": false,
+          "factor": 0.6
+        }
+      }
+    }
+  },
+  {
+    "uid": "1fa025db826442f18db0401757f5695a",
+    "label": "Kia K5",
+    "material": {
+      "name": "secondary_3",
+      "stateSetID": 5,
+      "channels": {
+        "AlbedoPBR": {
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "enable": true,
+          "factor": 1
+        },
+        "GlossinessPBR": {
+          "enable": false,
+          "factor": 0.4
+        },
+        "RoughnessPBR": {
+          "enable": true,
+          "factor": 0.25
+        }
+      }
+    }
+  },
+  {
+    "uid": "8248b851dc9646bb8e2da175846d28d0",
+    "label": "Chevrolet Tahoe",
+    "material": {
+      "name": "carpaint.106",
+      "stateSetID": 2,
+      "channels": {
+        "AlbedoPBR": {
+          "color": [
+            0.9412,
+            0.9412,
+            0.9412
+          ],
+          "enable": true,
+          "factor": 1
+        },
+        "GlossinessPBR": {
+          "enable": false,
+          "factor": 0.4
+        },
+        "RoughnessPBR": {
+          "enable": true,
+          "factor": 0.755051
+        }
+      }
+    }
+  }
+]
