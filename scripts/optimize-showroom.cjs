@@ -17,22 +17,37 @@ const sources = {
     const output = path.resolve(__dirname, '../public/images/optimized');
     fs.mkdirSync(output, { recursive: true });
     const manifest = {};
+    const generated = new Set();
     for (const [name, source] of Object.entries(sources)) {
-      const buffer = fs.readFileSync(path.resolve(__dirname, '../public/images', source));
+      const buffer = fs.readFileSync(path.resolve(__dirname, '../src/assets/products', `${name}.png`));
       const result = await page.evaluate(async url => {
         const image = new Image(); image.src = url; await image.decode();
+        const audit = document.createElement('canvas'); audit.width = image.width; audit.height = image.height;
+        audit.getContext('2d').drawImage(image, 0, 0);
+        const pixels = audit.getContext('2d').getImageData(0, 0, image.width, image.height).data;
+        let transparent = 0;
+        for (let index = 3; index < pixels.length; index += 4) if (pixels[index] < 10) transparent++;
         const versions = [...new Set([480, 960, 1440].map(width => Math.min(width, image.width)))].map(width => {
           const canvas = document.createElement('canvas');
           canvas.width = width; canvas.height = Math.round(width * image.height / image.width);
           canvas.getContext('2d').drawImage(image, 0, 0, canvas.width, canvas.height);
           return { width, data: canvas.toDataURL('image/webp', .86).split(',')[1] };
         });
-        return { width: image.width, height: image.height, versions };
-      }, 'data:image/jpeg;base64,' + buffer.toString('base64'));
-      for (const version of result.versions) fs.writeFileSync(path.join(output, `${name}-${version.width}.webp`), Buffer.from(version.data, 'base64'));
+        return { width: image.width, height: image.height, transparent: transparent / (image.width * image.height), versions };
+      }, 'data:image/png;base64,' + buffer.toString('base64'));
+      if (result.transparent < .02) throw new Error(`${name}: source has no transparent background`);
+      console.log(`${name}: ${Math.round(result.transparent * 100)}% transparent pixels`);
+      for (const version of result.versions) {
+        const filename = `${name}-${version.width}.webp`;
+        generated.add(filename);
+        fs.writeFileSync(path.join(output, filename), Buffer.from(version.data, 'base64'));
+      }
       manifest[name] = { width: result.width, height: result.height, source: `/images/${source}`, src: `/images/optimized/${name}-${result.versions[Math.min(1, result.versions.length - 1)].width}.webp`, srcSet: result.versions.map(v => `/images/optimized/${name}-${v.width}.webp ${v.width}w`).join(', ') };
     }
     fs.writeFileSync(path.resolve(__dirname, '../src/assets/showroom.json'), JSON.stringify(manifest, null, 2) + '\n');
-    console.log('Optimized 7 supplied product photos; originals preserved.');
+    for (const file of fs.readdirSync(output)) {
+      if (/^(hero|putty|primer|topcoat|paint|hardener|plastic)-\d+\.webp$/.test(file) && !generated.has(file)) fs.unlinkSync(path.join(output, file));
+    }
+    console.log('Optimized 7 transparent product cutouts; original reference photos preserved.');
   } finally { await browser.close(); }
 })().catch(error => { console.error(error); process.exitCode = 1; });

@@ -60,6 +60,44 @@ test('desktop product story: sticky image, matching photo stages, cleanup and mo
   expect(errors).toEqual([]);
 });
 
+test('transparent product assets and gallery navigation work on desktop and mobile', async ({page}) => {
+  await prepare(page);
+  await page.locator('.auto-header select').selectOption('en');
+  const images = require('../src/assets/showroom.json');
+  const alpha = await page.evaluate(async sources => Promise.all(sources.map(async src => {
+    const image = new Image(); image.src = src; await image.decode();
+    const canvas = document.createElement('canvas'); canvas.width = 100; canvas.height = 100;
+    const context = canvas.getContext('2d'); context.drawImage(image,0,0,100,100);
+    const pixels = context.getImageData(0,0,100,100).data;
+    let transparent = 0;
+    for(let index=3;index<pixels.length;index+=4) if(pixels[index]<10) transparent++;
+    return transparent / 10000;
+  })),Object.values(images).map(image=>image.src));
+  for(const ratio of alpha) expect(ratio).toBeGreaterThan(.02);
+  const gallery = page.locator('.auto-products');
+  const rail = gallery.locator('.product-rail');
+  const next = gallery.getByRole('button',{name:'Next products',exact:true});
+  const previous = gallery.getByRole('button',{name:'Previous products',exact:true});
+  await gallery.scrollIntoViewIfNeeded();
+  await expect(previous).toBeDisabled();
+  await next.click();
+  await expect.poll(()=>rail.evaluate(node=>node.scrollLeft)).toBeGreaterThan(20);
+  await expect(previous).toBeEnabled();
+  await rail.focus();
+  const before = await rail.evaluate(node=>node.scrollLeft);
+  await rail.press('ArrowRight');
+  await expect.poll(()=>rail.evaluate(node=>node.scrollLeft)).toBeGreaterThan(before + 20);
+  await page.emulateMedia({reducedMotion:'reduce'});
+  await page.setViewportSize({width:390,height:844});
+  await rail.evaluate(node=>node.scrollTo({left:node.scrollWidth,behavior:'instant'}));
+  await expect(next).toBeDisabled();
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)).toBeLessThanOrEqual(1);
+  await previous.click();
+  await expect(next).toBeEnabled();
+  await page.setViewportSize({width:320,height:700});
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)).toBeLessThanOrEqual(1);
+});
+
 test('all company pages: languages, real contacts, no invented services, responsive layouts and screenshots', async ({ page }) => {
   await prepare(page);
   await page.locator('#home-name').fill('Ali');

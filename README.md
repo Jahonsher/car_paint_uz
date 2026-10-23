@@ -61,12 +61,19 @@ npm.cmd run test:e2e
 
 ## Rasmlar va mazmun
 
-`public/images` ichidagi asl rasmlar va `public/images/optimized` variantlari
-repositoryda saqlanadi. Ularni ignore qilmang. Responsive WebP fayllarini qayta yaratish:
+`public/images` ichida ishlatiladigan 7 ta asl namuna surat saqlanadi. Ularning
+foni ajratilgan PNG variantlari `src/assets/products/`da, saytda ochiladigan
+shaffof WebP variantlari `public/images/optimized/`da. Ularni ignore qilmang.
+Responsive WebP fayllarini qayta yaratish (PNG shaffofligi tekshiriladi):
 
 ```sh
 node scripts/optimize-showroom.cjs
 ```
+
+Bosh sahifadagi mahsulotlar scroll bilan almashadigan sticky sahnada ko‘rsatiladi.
+Fotogalereya touch, trackpad, klaviatura va strelka tugmalari bilan suriladigan
+qatorga aylantirilgan. Harakatni kamaytirish yoqilsa sticky sahna oddiy kartochkalarga
+o‘tadi va silliq surilish o‘chadi. Keraksiz eski rasmlar va dublikatlar olib tashlangan.
 
 Mazmun va fotosuratlar manbalari: [COMPANY-SOURCES.md](src/assets/COMPANY-SOURCES.md).
 Murojaat maydonlari foydalanuvchining email ilovasida xat tayyorlaydi; avtomatik

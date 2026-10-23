@@ -1,5 +1,10 @@
 # Namuna manbalari
 
+Bu hujjat eski dizayn namunasining tarixiy manbalarini qayd etadi. Undagi
+`product1`–`product5` nusxalari 2026-10-23 kuni ishlatilmagani sababli tozalandi.
+Joriy mahsulot cutoutlari va ularning manbalari `../COMPANY-SOURCES.md`da;
+ushbu papkada faqat faol `logo-light.png` saqlanadi.
+
 - Firma sayti: https://car-paint-uz.vercel.app/
 - Harakat namunasi: https://www.instagram.com/reel/DeEPWhTiiY3/
 - Olingan sana: 2026-10-06.

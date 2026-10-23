@@ -27,7 +27,7 @@ Mahalliy eski koddagi `jasur03@gmail.com`, boshqa telefon raqami, Bali manzili, 
 | --- | --- | --- |
 | `2512_w.jpg` | Dexin Car paint juft ko‘k idishlari | Hero; bo‘yoq mahsuloti, xizmat jarayoni emas |
 | `2505_y.jpg` | Daybond 440 Polyester Putty qadoqlari | Tayyorlash materiallari; fotogalereya |
-| `2496_w.jpg` | Daybond 445 2K Acrylic Primer javoni | Kompaniya/assortiment; fotogalereya |
+| `2496_w.jpg` | Daybond 445 1K Acrylic Primer javoni | Kompaniya/assortiment; fotogalereya |
 | `2504_w.jpg` | Coloron 2K Acrylic Topcoat idishi | Bo‘yoqlar scroll bosqichi; fotogalereya |
 | `2510_w.jpg` | Dexin Car paint idishi | Fotogalereya |
 | `2482_w.jpg` | Daybond 458 2K Acrylic Hardener idishi | Yordamchi mahsulotlar scroll bosqichi |
@@ -35,6 +35,16 @@ Mahalliy eski koddagi `jasur03@gmail.com`, boshqa telefon raqami, Bali manzili, 
 
 Nomlar qadoqlarda o‘qiladigan yorliqlardan olingan. Daybond, Coloron va Dexin nomlarining fotosuratlarda bo‘lishi rasmiy hamkorlikni tasdiqlamaydi; ular manbadagi hamkor brendlar ro‘yxatiga qo‘shilmadi.
 
-`scripts/optimize-showroom.cjs` asl suratlarni saqlagan holda WebP variantlari va `src/assets/showroom.json` yaratadi. Rang, yorliq va mahsulot mazmuni o‘zgartirilmaydi. Oldin/keyin taqqoslash yaratilmagan.
+2026-10-23: tanlangan 7 surat asosida `imagegen` yordamida shaffof fonli mahsulot
+cutoutlari tayyorlandi (`src/assets/products/`). Tokchalar, devorlar, LED chiziqlar
+va chetdagi begona qadoqlar olib tashlandi. Qadoqning asosiy brendi, raqami va
+ko‘rinishi manba bilan solishtirildi. Bu AI yordamida tahrirlangan mahsulot tasvirlari;
+texnik tavsifning manbasi sifatida qadoq maketidan foydalanilmaydi.
+
+`scripts/optimize-showroom.cjs` PNG cutoutlardan shaffof WebP variantlari va
+`src/assets/showroom.json` yaratadi, eskirgan derivativlarni tozalaydi. 7 ta asl
+namuna surat kelajakda tekshirish uchun saqlandi. Boshqa ishlatilmagan 27 ta surat,
+eski `src/images` va `src/assets/automotive` rasmlari, keraksiz brand mahsulot nusxalari
+va takroriy logotiplar o‘chirildi. Faol `logo-light.png` saqlandi.
 
 Tekshiruv artefaktlari: `artifacts/source-site-audit.json` va `artifacts/source-{home,about,product,news,contact}.png`.
