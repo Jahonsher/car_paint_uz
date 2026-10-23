@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import AutomotiveImage from './AutomotiveImage';
+import PaintSplash from './PaintSplash';
 
 export default function AutomotiveStory({ text }) {
   const root = useRef(null);
@@ -12,6 +13,7 @@ export default function AutomotiveStory({ text }) {
       node.removeAttribute('data-motion');
       node.removeAttribute('data-step');
       node.style.removeProperty('--progress');
+      node.style.removeProperty('--scene-drift');
       if (!media.matches || !('IntersectionObserver' in window)) return;
       let frame = 0;
       let visible = false;
@@ -27,6 +29,7 @@ export default function AutomotiveStory({ text }) {
           if (bounds.top + bounds.height / 2 < window.innerHeight * 0.6) active = index;
         });
         node.style.setProperty('--progress', progress.toFixed(4));
+        node.style.setProperty('--scene-drift', `${((progress - 0.5) * 9).toFixed(3)}deg`);
         node.dataset.step = String(active);
       };
       const schedule = () => { if (visible && !frame) frame = requestAnimationFrame(update); };
@@ -47,7 +50,7 @@ export default function AutomotiveStory({ text }) {
     }
     configure();
     media.addEventListener('change', configure);
-    return () => { cleanup(); media.removeEventListener('change', configure); };
+    return () => { cleanup(); media.removeEventListener('change', configure); node.removeAttribute('data-motion'); node.style.removeProperty('--scene-drift'); node.style.removeProperty('--progress'); };
   }, []);
   return <section className="auto-story" id="process" aria-labelledby="process-title">
     <div className="auto-container auto-story-heading">
@@ -57,8 +60,12 @@ export default function AutomotiveStory({ text }) {
     </div>
     <div className="auto-story-track auto-container" ref={root}>
       <figure className="auto-story-visual">
+        <PaintSplash tone="story" variant={1} className="paint-story-splash" />
+        <div className="product-orbit" aria-hidden="true"><span /><span /><span /></div>
+        <div className="product-scene-type" aria-hidden="true">{['PREPARE', 'COLOR', 'FINISH'].map((word, index) => <span key={word} className={`product-scene-word product-scene-word-${index}`}>{word}</span>)}</div>
+        <div className="product-scene-floor" aria-hidden="true" />
         {['putty', 'topcoat', 'hardener'].map((image, index) => <AutomotiveImage key={image} className={`company-story-frame company-story-frame-${index}`} name={image} alt={text.storyAlts[index]} sizes="(max-width: 899px) 100vw, 58vw" />)}
-        <figcaption><span>CARPAINT / PRODUCT SELECTION</span><span aria-hidden="true">01 — 03</span></figcaption>
+        <figcaption><span>CARPAINT / MATERIAL IN FOCUS</span><span className="product-scene-count" aria-hidden="true">{['01','02','03'].map((number,index)=><b key={number} className={`product-scene-count-${index}`}>{number} / 03</b>)}</span></figcaption>
         <div className="auto-progress" aria-hidden="true"><span /></div>
       </figure>
       <div className="auto-steps">
