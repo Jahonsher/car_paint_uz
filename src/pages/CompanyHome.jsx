@@ -6,6 +6,7 @@ import AutomotiveStory from '../components/AutomotiveStory';
 import HomeContact from '../components/HomeComp/HomeContact';
 import PaintStudio from '../components/PaintStudio';
 import PaintSplash from '../components/PaintSplash';
+import PartnerBrands from '../components/PartnerBrands';
 import paintCopy from '../localization/paintStudio';
 import { company } from '../data/company';
 import copy from '../localization/company';
@@ -23,7 +24,7 @@ export default function CompanyHome({ lang, setLang }) {
       <figure className="auto-hero-art company-hero-art"><PaintSplash tone="cyan" variant={2} className="paint-hero-splash" /><PaintSplash tone="coral" variant={3} className="paint-hero-accent" /><AutomotiveImage name="hero" alt={text.heroAlt} hero sizes="(max-width: 760px) 100vw, 58vw" /><div className="company-color-swatch" aria-hidden="true"><i /><i /><i /><i /><i /><span>COLOR / 500+</span></div><figcaption><span>CARPAINT / PRODUCT COLLECTION</span><span>{text.photo} ↗</span></figcaption></figure>
       <div className="auto-hero-index" aria-hidden="true">01 / COLOR & MATERIAL</div>
     </section>
-    <section className="auto-material-band" aria-label={text.brandTitle}><p className="auto-container auto-eyebrow">{text.brandTitle}</p><div className="auto-container">{company.brands.map(brand => <span key={brand}>{brand}</span>)}</div></section>
+    <PartnerBrands title={text.brandTitle} />
     <PaintStudio lang={lang} />
     <AutomotiveStory text={text} />
     <CompanyGallery text={text} />
