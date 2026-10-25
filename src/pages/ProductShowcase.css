@@ -97,10 +97,8 @@
   .auto-home .company-photo-card { transition: none; }
 }
 
-/* Paint lives behind the real packaging; labels and controls stay above it. */
-.paint-splash { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+/* Soft surfaces behind product photography. */
 .auto-home .company-photo { isolation: isolate; }
-.auto-home .company-photo > .paint-splash { inset: 1%; width: 98%; height: 98%; opacity: .83; transform: rotate(-9deg) scale(.98); transition: transform .75s cubic-bezier(.2,.7,.2,1); }
 .auto-home .company-photo > img { position: relative; z-index: 1; }
 .auto-home .company-photo-arrow, .auto-home .company-photo-index { z-index: 2; }
 .auto-home .product-rail > .company-photo-card { --product-wash: #fff4df; background: var(--product-wash); border-color: #e6d8bb; }
@@ -110,46 +108,20 @@
 .auto-home .product-rail > .company-photo-card:nth-child(6n+5) { --product-wash: #f1f6e7; border-color: #d8e3c1; }
 .auto-home .product-rail > .company-photo-card:nth-child(6n+6) { --product-wash: #e8f6ed; border-color: #c4dfcf; }
 .auto-home .product-rail .company-photo { background: radial-gradient(ellipse, #ffffff66, transparent 70%), var(--product-wash); }
-.auto-home .product-rail .company-photo-card:hover .paint-splash { transform: rotate(0deg) scale(1.08); }
 
 .auto-home .company-hero-art { background: radial-gradient(ellipse at 65% 40%, #deeffb, #f2e9f3 80%); }
 .auto-home .company-hero-art::before { z-index: 0; color: #b4ceda; opacity: .55; }
-.auto-home .company-hero-art > .paint-hero-splash { inset: -2% -5% auto; width: 110%; height: 100%; opacity: .7; transform: rotate(-12deg); }
-.auto-home .company-hero-art > .paint-hero-accent { inset: auto auto -7% -18%; width: 72%; height: 72%; opacity: .67; transform: rotate(18deg); }
 .auto-home .company-hero-art > img { z-index: 1; }
 .auto-home .company-hero-art figcaption, .company-hero-art .company-color-swatch { z-index: 2; }
 .auto-home .company-about-art { position: relative; isolation: isolate; overflow: hidden; background: #e6f2f0; }
-.auto-home .company-about-art > .paint-splash { inset: -9% 0 0; height: 112%; opacity: .58; }
 .auto-home .company-about-art > img { position: relative; z-index: 1; }
 
-.auto-story-track { --splash-ink: #d4a342; }
-.auto-story-track[data-step='1'] { --splash-ink: #327ce4; }
-.auto-story-track[data-step='2'] { --splash-ink: #82b832; }
-.auto-home .auto-story-visual > .paint-story-splash { inset: 6% -4% auto; width: 108%; height: 88%; opacity: .54; transform: rotate(var(--scene-drift, 0deg)); transition: opacity .6s; }
 .auto-home .auto-story-visual .product-orbit { opacity: .4; }
 .auto-home .auto-story-visual .product-scene-type { z-index: 1; }
 .auto-home .auto-story-visual > img { z-index: 1; }
 .auto-home .auto-story-visual figcaption { z-index: 2; }
 .auto-home .auto-products { position: relative; isolation: isolate; }
-.paint-section-wash { inset: -40px auto auto -125px; width: 400px; height: 400px; z-index: -1; opacity: .075; transform: rotate(28deg); }
 
 .auto-home .company-api-image, .auto-home .company-detail-image { position: relative; isolation: isolate; overflow: hidden; background: #eef2f4; }
-.auto-home .company-api-image > .paint-splash, .auto-home .company-detail-image > .paint-splash { inset: 0; opacity: .65; }
 .auto-home .company-api-image > img, .auto-home .company-api-image > .company-no-image,
 .auto-home .company-detail-image > img, .auto-home .company-detail-image > .company-no-image { position: relative; z-index: 1; }
-
-@media (prefers-reduced-motion: no-preference) {
-  .auto-home .company-hero-art > .paint-hero-splash { animation: paint-drift 10s ease-in-out infinite alternate; }
-}
-@keyframes paint-drift {
-  from { transform: translate(-4px, 3px) rotate(-12deg) scale(1); }
-  to { transform: translate(4px, -4px) rotate(-7deg) scale(1.025); }
-}
-@media (max-width: 600px) {
-  .paint-section-wash { width: 260px; height: 260px; left: -85px; top: 0; }
-  .auto-home .company-photo > .paint-splash { opacity: .76; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .paint-splash { transition: none; animation: none; }
-  .auto-home .product-rail .company-photo-card:hover .paint-splash { transform: rotate(-9deg) scale(.98); }
-}
