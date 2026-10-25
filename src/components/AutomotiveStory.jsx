@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react';
 import AutomotiveImage from './AutomotiveImage';
-import PaintSplash from './PaintSplash';
 
 export default function AutomotiveStory({ text }) {
   const root = useRef(null);
@@ -60,7 +59,7 @@ export default function AutomotiveStory({ text }) {
     </div>
     <div className="auto-story-track auto-container" ref={root}>
       <figure className="auto-story-visual">
-        <PaintSplash tone="story" variant={1} className="paint-story-splash" />
+
         <div className="product-orbit" aria-hidden="true"><span /><span /><span /></div>
         <div className="product-scene-type" aria-hidden="true">{['PREPARE', 'COLOR', 'FINISH'].map((word, index) => <span key={word} className={`product-scene-word product-scene-word-${index}`}>{word}</span>)}</div>
         <div className="product-scene-floor" aria-hidden="true" />

@@ -4,7 +4,6 @@ import { Link, useLocation, useParams, useSearchParams } from 'react-router-dom'
 import CompanyShell, { CompanyContact, CompanyPageHeading } from '../components/CompanyShell';
 import CompanyGallery from '../components/CompanyGallery';
 import AutomotiveImage from '../components/AutomotiveImage';
-import PaintSplash from '../components/PaintSplash';
 import HomeContact from '../components/HomeComp/HomeContact';
 import { CompanyApiImage, CompanyProductCards, CompanyStatus } from '../components/CompanyApiContent';
 import copy from '../localization/company';
@@ -92,6 +91,6 @@ export function CompanySingle({ lang, setLang }) {
   const back = typeof candidate === 'string' && /^\/product(?:\?|$)/.test(candidate) ? candidate : '/product';
   useEffect(() => { setSelected(0); }, [id]);
   return <CompanyShell lang={lang} setLang={setLang} pageKey="productPage"><div className="auto-container company-detail"><Link className="auto-text-link" to={back}>← {text.back}</Link>
-    {product.isPending || product.isError ? <><h1>{product.isError ? text.productMissing : text.productPage}</h1><CompanyStatus text={text} loading={product.isPending} error={product.isError} empty={text.productMissing} retry={product.refetch} /></> : <div className="company-detail-grid"><div><div className="company-detail-image"><PaintSplash tone="coral" variant={2} /><CompanyApiImage key={images[selected]} src={images[selected]} alt={title} loading="eager" /></div><div className="company-detail-thumbs">{images.map((image, index) => <button key={image} aria-label={`${title} — ${index + 1}`} aria-pressed={selected === index} onClick={() => setSelected(index)}><img src={image} alt="" width="72" height="72" /></button>)}</div></div><div><p className="auto-eyebrow">CARPAINT / {product.data.brand_name || text.productPage}</p><h1>{title}</h1><p>{plainText(localized(product.data, 'product_description', lang)) || text.noDescription}</p><p className="company-availability">{text.availability}</p><a className="auto-button" href={company.phoneHref}>{text.contact} ↗</a></div></div>}
+    {product.isPending || product.isError ? <><h1>{product.isError ? text.productMissing : text.productPage}</h1><CompanyStatus text={text} loading={product.isPending} error={product.isError} empty={text.productMissing} retry={product.refetch} /></> : <div className="company-detail-grid"><div><div className="company-detail-image"><CompanyApiImage key={images[selected]} src={images[selected]} alt={title} loading="eager" /></div><div className="company-detail-thumbs">{images.map((image, index) => <button key={image} aria-label={`${title} — ${index + 1}`} aria-pressed={selected === index} onClick={() => setSelected(index)}><img src={image} alt="" width="72" height="72" /></button>)}</div></div><div><p className="auto-eyebrow">CARPAINT / {product.data.brand_name || text.productPage}</p><h1>{title}</h1><p>{plainText(localized(product.data, 'product_description', lang)) || text.noDescription}</p><p className="company-availability">{text.availability}</p><a className="auto-button" href={company.phoneHref}>{text.contact} ↗</a></div></div>}
   </div></CompanyShell>;
 }
