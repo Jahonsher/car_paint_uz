@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import CompanyShell, { CompanyContact } from '../components/CompanyShell';
 import CompanyGallery from '../components/CompanyGallery';
+import InstagramReels from '../components/InstagramReels';
 import AutomotiveImage from '../components/AutomotiveImage';
 import AutomotiveStory from '../components/AutomotiveStory';
 import HomeContact from '../components/HomeComp/HomeContact';
@@ -27,6 +28,7 @@ export default function CompanyHome({ lang, setLang }) {
     <PaintStudio lang={lang} />
     <AutomotiveStory text={text} />
     <CompanyGallery text={text} />
+    <InstagramReels lang={lang} />
     <section className="auto-about auto-container" aria-labelledby="auto-about-title" data-reveal>
       <figure className="company-about-art"><AutomotiveImage name="primer" alt="Daybond 445 1K Acrylic Primer" sizes="(max-width: 760px) 100vw, 48vw" /><figcaption>CARPAINT / PRODUCT COLLECTION</figcaption></figure>
       <div><p className="auto-eyebrow">{text.aboutLabel}</p><h2 id="auto-about-title">{text.aboutTitle}</h2><p>{text.aboutText}</p><Link className="auto-text-link" to="/about">{text.aboutLink} ↗</Link></div>
